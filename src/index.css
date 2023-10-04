@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active{
+    font-weight: 600;
+    color: #353535;
+    position: relative;
+}
+.active::after{
+    content: '';
+    background: #353535;
+    position: absolute;
+    width: 45%;
+    border-radius: 25px;
+    height: 2px;
+    bottom: -5px;
+    left: 25%;
+}
