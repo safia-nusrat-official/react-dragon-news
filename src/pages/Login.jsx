@@ -3,7 +3,7 @@ import { Navbar } from './components/Navbar'
 
 export const Login = () => {
   return (
-    <div className='bg-gray-200'>
+    <div>
         <Navbar></Navbar>
         <p>Login</p>
     </div>

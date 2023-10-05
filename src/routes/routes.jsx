@@ -5,6 +5,7 @@ import { About } from "../pages/about/About";
 import Career from "../pages/career/Career"
 import { Login } from "../pages/Login";
 import { SignUp } from "../pages/SignUp";
+import { CardDetails } from "../pages/CardDetails";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader:() => fetch("/public/data/news.json")
       },
       {
         path: "/about",
@@ -30,6 +32,11 @@ export const router = createBrowserRouter([
       {
         path:"/signup",
         element:<SignUp></SignUp>
+      },
+      {
+        path:"/details/:id",
+        element:<CardDetails></CardDetails>,
+        loader: (params)=>fetch("/public/data/news.json")
       }
     ]
   },

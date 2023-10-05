@@ -10,7 +10,7 @@ const Root = () => {
     md:mx-auto
     md:w-4/5
     w-full
-    mt-10">
+    my-10">
       <Outlet></Outlet>
     </div>
   );

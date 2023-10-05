@@ -20,6 +20,6 @@ export default {
     //   'desktop':'1440px'
     // }
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 
