@@ -9,8 +9,16 @@ import { BiLogoFacebook } from "react-icons/bi";
 import qZone2 from "../../assets/qZone2.png"
 import qZone1 from "../../assets/qZone1.png"
 import qZone3 from "../../assets/qZone3.png"
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 export const RightSideBar = () => {
+  const {LogInViaGoogle} = useContext(AuthContext)
+  const handleLogInWithGoogle = () =>{
+    LogInViaGoogle()
+    .then((result)=>console.log(result.user))
+    .catch(error=>console.error(error))
+  }
   return (
     <div>
       <div className="flex flex-col mb-6">
@@ -21,7 +29,8 @@ export const RightSideBar = () => {
           Login With
         </span>
 
-        <button className="border-blue-500 border-2 items-center flex justify-center py-2 px-4 rounded-md text-blue-500 bg-white font-normal mt-4 hover:bg-slate-100">
+        <button  onClick={handleLogInWithGoogle}
+         className="border-blue-500 border-2 items-center flex justify-center py-2 px-4 rounded-md text-blue-500 bg-white font-normal mt-4 hover:bg-slate-100">
           <BsGoogle className="mr-2"></BsGoogle>
           Login with Google
         </button>
